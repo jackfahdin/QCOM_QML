@@ -9,18 +9,32 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
-    MenuBar {
-        id: menuBar
+    // MenuBar {
+    //     id: menuBar
+    // }
+
+    // 行排序
+    GridLayout {
+        columns: 2
+        columnSpacing: 10 // 设置列之间的间距
+        rowSpacing: 10 // 设置行之间的间距
+        ColumnLayout {
+            spacing: 10
+            //anchors.top: menuBar.bottom
+            SerialPortConfigComponent {}
+            ResultDisplayComponent {}
+            CarryTaskDsiaplyComponent {}
+            InputSettingsComponent {}
+        }
+
+        ColumnLayout {
+            spacing: 10
+            CommandListComponent {}
+        }
     }
 
-    // 列排序
-    ColumnLayout {
-        anchors.top: menuBar.bottom
-        SerialPortConfigComponent {}
-    }
-
-    Component.onCompleted: {
-        menuBar.contentItem = Qt.createComponent(
-                    "MenuBarComponent.qml").createObject(menuBar)
-    }
+    // Component.onCompleted: {
+    //     menuBar.contentItem = Qt.createComponent(
+    //                 "MenuBarComponent.qml").createObject(menuBar)
+    // }
 }

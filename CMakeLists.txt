@@ -20,6 +20,10 @@ qt_add_qml_module(appQCOM_QML
         Main.qml
         QML_FILES MenuBarComponent.qml
         QML_FILES SerialPortConfigComponent.qml
+        QML_FILES ResultDisplayComponent.qml
+        QML_FILES InputSettingsComponent.qml
+        QML_FILES CarryTaskDsiaplyComponent.qml
+        QML_FILES CommandListComponent.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
