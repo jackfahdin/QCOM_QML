@@ -2,39 +2,44 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
 import QtQuick.Layouts
+import FluentUI
 
-Window {
-    width: 640
-    height: 480
+FluWindow {
+    width: 960
+    height: 800
     visible: true
+    showStayTop: true
+    showDark: true
     title: qsTr("Hello World")
 
-    // MenuBar {
-    //     id: menuBar
-    // }
-
     // 行排序
-    GridLayout {
-        columns: 2
-        columnSpacing: 10 // 设置列之间的间距
-        rowSpacing: 10 // 设置行之间的间距
+    RowLayout {
+        anchors.fill: parent
+        anchors.margins: 20
         ColumnLayout {
-            spacing: 10
-            //anchors.top: menuBar.bottom
-            SerialPortConfigComponent {}
-            ResultDisplayComponent {}
-            CarryTaskDsiaplyComponent {}
-            InputSettingsComponent {}
+            Layout.alignment: Qt.AlignTop
+            SerialPortConfigComponent {
+                Layout.preferredWidth: 500
+            }
+            ResultDisplayComponent {
+                Layout.preferredWidth: 500
+                Layout.fillHeight: true
+            }
+            CarryTaskDsiaplyComponent {
+                Layout.preferredWidth: 500
+                Layout.fillHeight: true
+            }
+            InputSettingsComponent {
+                Layout.preferredWidth: 500
+            }
         }
 
         ColumnLayout {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
             spacing: 10
-            CommandListComponent {}
+            // CommandListComponent {}
+            CommandListComponent1 {}
         }
     }
-
-    // Component.onCompleted: {
-    //     menuBar.contentItem = Qt.createComponent(
-    //                 "MenuBarComponent.qml").createObject(menuBar)
-    // }
 }

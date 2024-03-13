@@ -1,51 +1,56 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import FluentUI
 
 GroupBox {
     title: qsTr("发送设置")
 
     ColumnLayout {
         spacing: 10
+        anchors.fill: parent
 
         GridLayout {
-            columns: 2
+            columns: 5
             columnSpacing: 10 // 设置列之间的间距
-            rowSpacing: 10 // 设置行之间的间距
+            Layout.fillWidth: true
 
-            CheckBox {
+            FluCheckBox {
                 text: "DTS"
             }
 
-            CheckBox {
+            FluCheckBox {
                 text: "RTS"
             }
 
-            CheckBox {
-                text: "show\r\n"
-            }
-
-            CheckBox {
-                text: "show time"
-            }
-
-            CheckBox {
+            FluCheckBox {
                 text: "sensd with enter"
+            }
+
+            FluCheckBox {
+                text: "show\\r\\n"
+            }
+
+            FluCheckBox {
+                text: "show time"
             }
         }
 
         RowLayout {
-            TextField {
+            Layout.fillWidth: true
+            FluMultilineTextBox {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
                 id: sendDataTextField
             }
 
             ColumnLayout {
-                Button {
+                FluButton {
                     text: "发送"
                 }
 
-                Button {
-                    text: "保存到右侧列表"
+                FluButton {
+                    text: "添加"
                 }
             }
         }

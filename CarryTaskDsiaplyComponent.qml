@@ -1,24 +1,30 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import FluentUI
 
 GroupBox {
-    title: qsTr("配置")
+    title: qsTr("发送任务显示")
 
     ColumnLayout {
-        TextArea {
+        anchors.fill: parent
+        FluMultilineTextBox {
             id: sendDataTextArea
+            Layout.fillWidth: true
+            Layout.fillHeight: true
             readOnly: true
         }
 
         RowLayout {
             spacing: 10
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignRight
 
-            Button {
+            FluButton {
                 text: "保存"
             }
 
-            Button {
+            FluButton {
                 text: "清除"
             }
         }

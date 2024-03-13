@@ -4,8 +4,12 @@ import QtQuick.Controls
 
 GroupBox {
     title: qsTr("命令列表")
+    Layout.fillWidth: true
+    Layout.fillHeight: true
 
     ColumnLayout {
+        Layout.fillWidth: true
+        Layout.fillHeight: true
         spacing: 10
         GroupBox {
             spacing: 10

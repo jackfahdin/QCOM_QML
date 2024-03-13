@@ -1,68 +1,66 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import FluentUI
 
 GroupBox {
     title: qsTr("配置")
 
     RowLayout {
-        width: parent.width // 相对父容器宽度
+        anchors.fill: parent
 
-        // 网格
         GridLayout {
             columns: 2
             columnSpacing: 10 // 设置列之间的间距
-            rowSpacing: 10 // 设置行之间的间距
-            width: parent.width // 使用父元素的宽度
-
-            Label {
+            rowSpacing: 1 // 设置行之间的间距
+            FluText {
                 text: qsTr("串口")
             }
-            ComboBox {
+            FluComboBox {
                 id: serialPortComboBox
                 Layout.fillWidth: true
                 model: SerialPortHelper.availablePorts()
             }
 
-            Label {
+            FluText {
                 text: qsTr("波特率")
             }
-            ComboBox {
+            FluComboBox {
                 id: baudRateComboBox
                 Layout.fillWidth: true
                 model: [1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200]
             }
 
-            Label {
+            FluText {
                 text: qsTr("数据位")
             }
-            ComboBox {
+            FluComboBox {
                 id: dataComboBox
                 Layout.fillWidth: true
                 model: [5, 6, 7, 8]
             }
 
-            Label {
+            FluText {
                 text: qsTr("校验位")
             }
-            ComboBox {
+            FluComboBox {
                 id: parityComboBox
                 Layout.fillWidth: true
                 model: [2400, 4800, 9600, 19200, 38400, 57600, 115200]
             }
 
-            Label {
+            FluText {
                 text: qsTr("波特率")
             }
-            ComboBox {
+            FluComboBox {
                 id: stopComboBox
                 Layout.fillWidth: true
                 model: [1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200]
             }
         }
 
-        Button {
-            text: "打开"
+        FluToggleSwitch {// textRight: false
+            // text: "打开"
         }
     }
 }
