@@ -37,7 +37,7 @@ FluWindow {
         ColumnLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            spacing: 10
+            // spacing: 10
             // CommandListComponent {}
             CommandListComponent1 {}
         }
